@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 export default function CardItem(props) {
-  const { title, image, description, path, subTitle } = props;
+  const { title, image, description, path, subTitle, pathRepo } = props;
   return (
     <>
       <Card
@@ -42,7 +42,7 @@ export default function CardItem(props) {
           <Link color='inherit' href={path}>
             <Button size='small'>Deploy</Button>
           </Link>
-          <Link color='inherit' href={path}>
+          <Link color='inherit' href={pathRepo}>
             <Button size='small'>Github</Button>
           </Link>
         </CardActions>

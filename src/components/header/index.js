@@ -1,13 +1,6 @@
 import React from "react";
 
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  Typography,
-  CardMedia,
-} from "@material-ui/core";
+import { Box, Button, Container, Stack, Typography } from "@material-ui/core";
 
 export default function Header() {
   return (
@@ -22,6 +15,7 @@ export default function Header() {
       >
         <Container maxWidth='sm'>
           <Typography
+            className=''
             component='h1'
             variant='h2'
             align='center'
@@ -50,8 +44,8 @@ export default function Header() {
             spacing={2}
             justifyContent='center'
           >
-            <Button variant='contained'>Main call to action</Button>
-            <Button variant='outlined'>Secondary action</Button>
+            <Button variant='contained'>Competências</Button>
+            <Button variant='outlined'>Projetos</Button>
           </Stack>
         </Container>
       </Box>

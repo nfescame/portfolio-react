@@ -8,7 +8,6 @@ import { AuthContext } from "../../context/index";
 export default function List() {
   const data = React.useContext(AuthContext);
   const { cards } = data;
-  console.log(cards);
 
   return (
     <>
@@ -26,6 +25,7 @@ export default function List() {
                 image={card.image}
                 path={card.path}
                 description={card.description}
+                pathRepo={card.pathRepo}
               />
             </Grid>
           ))}
