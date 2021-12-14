@@ -3,20 +3,19 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import { AuthContext } from "../../context";
 
 export default function ButtonAppBar() {
-  const { setIsOpen, isOpen } = useContext(AuthContext);
+  const { setIsOpen } = useContext(AuthContext);
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar>
+      <AppBar color='inherit'>
         <Toolbar>
           <IconButton
-            onClick={() => setIsOpen(isOpen ? false : true)}
+            onMouseEnter={() => setIsOpen(true)}
             size='large'
             edge='start'
             color='inherit'
@@ -27,7 +26,7 @@ export default function ButtonAppBar() {
           </IconButton>
 
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            Portifolio FULL-STACK DEVELOPER
+            Portifolio
           </Typography>
         </Toolbar>
       </AppBar>

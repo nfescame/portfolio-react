@@ -10,7 +10,8 @@ import {
 } from "@material-ui/core";
 
 export default function CardItem(props) {
-  const { title, image, description, path, subTitle, pathRepo } = props;
+  const { title, image, description, path, subTitle, pathRepo, titleMain } =
+    props;
   return (
     <>
       <Card
@@ -23,29 +24,50 @@ export default function CardItem(props) {
         <CardMedia
           component='img'
           sx={{
-            // 16:9
-            pt: "56.25%",
+            pt: "15%",
           }}
           image={image}
           alt='random'
         />
         <CardContent sx={{ flexGrow: 1 }}>
-          <Typography gutterBottom variant='h5' component='h2'>
+          <Typography
+            gutterBottom
+            variant='h5'
+            component='h2'
+            sx={{ color: "rgb(252, 8, 83)" }}
+          >
             {title}
           </Typography>
-          <Typography gutterBottom variant='h5' component='h5'>
+          <Typography
+            gutterBottom
+            variant='h6'
+            component='h5'
+            sx={{ color: "#333333" }}
+          >
             {subTitle}
           </Typography>
           <Typography>{description}</Typography>
         </CardContent>
-        <CardActions>
-          <Link color='inherit' href={path}>
-            <Button size='small'>Deploy</Button>
-          </Link>
-          <Link color='inherit' href={pathRepo}>
-            <Button size='small'>Github</Button>
-          </Link>
-        </CardActions>
+        {titleMain === "Skills" ? null : (
+          <CardActions>
+            <Link
+              color='inherit'
+              href={path}
+              target='_blank'
+              sx={{ textDecoration: "none" }}
+            >
+              <Button size='small'>Deploy</Button>
+            </Link>
+            <Link
+              color='inherit'
+              href={pathRepo}
+              target='_blank'
+              sx={{ textDecoration: "none" }}
+            >
+              <Button size='small'>Github</Button>
+            </Link>
+          </CardActions>
+        )}
       </Card>
     </>
   );

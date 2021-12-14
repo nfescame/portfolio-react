@@ -9,7 +9,6 @@ function App() {
       <Auth>
         <Home />
       </Auth>
-      ;
     </>
   );
 }
