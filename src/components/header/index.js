@@ -1,98 +1,129 @@
 import React from "react";
 
-import { Box, Button, Container, Stack, Typography } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  Button,
+  Grid,
+} from "@material-ui/core";
 import Link from "@mui/material/Link";
-
-import CodeIcon from "@mui/icons-material/Code";
-import WorkIcon from "@mui/icons-material/Work";
 
 export default function Header() {
   return (
-    <>
+    <div>
       <Box
         sx={{
-          bgcolor: "#333333",
-          pt: 24,
-          pb: 8,
+          bgcolor: "#2A2A2A",
+          pt: 25,
+          pb: 28,
           zIndex: "100",
-          height: "100vh",
         }}
       >
-        <Container maxWidth='sm'>
-          <Typography
-            component='h5'
-            variant='h5'
-            align='start'
-            color='#08FDD8'
-            gutterBottom
-          >
-            Ola, meu nome é
-          </Typography>
-          <Typography
-            component='h1'
-            variant='h2'
-            align='start'
-            color='#FC0853'
-            gutterBottom
-          >
-            Nilton Escame.
-          </Typography>
-          <Typography
-            component='h1'
-            variant='h4'
-            align='start'
-            color='#08FDD8'
-            gutterBottom
-          >
-            Web developer.
-          </Typography>
-          <Box
-            sx={{
-              backgroundColor: "#08FDD8",
-              padding: "1rem",
-              marginBottom: "3rem",
-              marginTop: "3rem",
-              borderRadius: "10px",
-            }}
-          >
-            <Typography variant='h6' align='start' color='#333333' paragraph>
-              Front End / Back End / React JS.
+        <Container maxWidth='sm' sx={{ display: "flex", maxWidth: "100%" }}>
+          <Box>
+            <Typography
+              component='h1'
+              variant='h3'
+              align='start'
+              color='#A2A'
+              gutterBottom
+            >
+              Web developer portfolio.
             </Typography>
+            <Typography
+              component='h6'
+              variant='h6'
+              align='start'
+              color='#CACACA'
+              gutterBottom
+            >
+              Componentes React.JS, Bootstrap, Material UI, Node.JS... Confira
+              meus projetos mais recentes de portfólio de desenvolvimento de
+              software para web.
+            </Typography>
+
+            <Stack
+              sx={{ pt: 4, pb: 4 }}
+              direction='row'
+              spacing={2}
+              justifyContent='center'
+            >
+              <Grid container spacing={2}>
+                <Grid item xs={4} sm={6} md={4}>
+                  <Link>
+                    <Button
+                      variant='contained'
+                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
+                    >
+                      Projetos
+                    </Button>
+                  </Link>
+                </Grid>
+                <Grid item xs={3} sm={6} md={4}>
+                  <Link>
+                    <Button
+                      variant='contained'
+                      sx={{ backgroundColor: "#2A2A2A", width: "5rem" }}
+                    >
+                      Skills
+                    </Button>
+                  </Link>
+                </Grid>
+                <Grid item xs={4} sm={6} md={4}>
+                  <Link>
+                    <Button
+                      variant='contained'
+                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
+                    >
+                      Contatos
+                    </Button>
+                  </Link>
+                </Grid>
+                <Grid item xs={3} sm={6} md={4}>
+                  <Link href='https://github.com/nfescame' target='_blank'>
+                    <Button
+                      variant='contained'
+                      sx={{ backgroundColor: "#2A2A2A", width: "5rem" }}
+                    >
+                      GitHub
+                    </Button>
+                  </Link>
+                </Grid>
+
+                <Grid item xs={4} sm={6} md={4}>
+                  <Link
+                    href='https://www.linkedin.com/in/nilton-escame/'
+                    target='_blank'
+                  >
+                    <Button
+                      variant='contained'
+                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
+                    >
+                      LinkedIn
+                    </Button>
+                  </Link>
+                </Grid>
+
+                <Grid item xs={5} sm={6} md={4}>
+                  <Link
+                    href='https://profiles.ironhack.com/nilton-escame'
+                    target='_blank'
+                  >
+                    <Button
+                      variant='contained'
+                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
+                    >
+                      Certificado
+                    </Button>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Stack>
           </Box>
-
-          <Stack
-            sx={{ pt: 4, pb: 4 }}
-            direction='row'
-            spacing={2}
-            justifyContent='center'
-          >
-            <Link href='#Projects'>
-              <Button
-                variant='contained'
-                style={{
-                  backgroundColor: "#08FDD8",
-                  color: "#000",
-                }}
-              >
-                <WorkIcon /> Projects
-              </Button>
-            </Link>
-
-            <Link href='#Skills'>
-              <Button
-                variant='contained'
-                style={{
-                  backgroundColor: "#08FDD8",
-                  color: "#000",
-                }}
-              >
-                <CodeIcon />
-                Skills
-              </Button>
-            </Link>
-          </Stack>
         </Container>
       </Box>
-    </>
+    </div>
   );
 }

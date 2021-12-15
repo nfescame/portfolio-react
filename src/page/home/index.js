@@ -1,31 +1,32 @@
 import React, { useContext } from "react";
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, Box, Grid } from "@material-ui/core";
 
-import NavBar from "../../components/navBar";
 import Header from "../../components/header";
-import Drop from "../../components/drop";
+
 import List from "../../components/list";
-import ListCompetencias from "../../components/list Competencias";
 
 import Footer from "../../components/footer";
 
 import { AuthContext } from "../../context";
 
 export default function Album() {
-  const { isOpen, projects, competencias } = useContext(AuthContext);
+  const { projects, competencias } = useContext(AuthContext);
 
   return (
     <section>
       <CssBaseline />
-      <NavBar />
 
-      {isOpen ? <Drop /> : null}
-
-      <main>
+      <Box>
         <Header />
-        <List list={projects} />
-        <ListCompetencias list={competencias} />
-      </main>
+        <Grid container spacing={2} sx={{ backgroundColor: "#2a2a2a" }}>
+          <Grid item xs={12} sm={6} md={6}>
+            <List list={projects} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <List list={competencias} />
+          </Grid>
+        </Grid>
+      </Box>
 
       <Footer />
     </section>

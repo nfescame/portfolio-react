@@ -1,39 +1,54 @@
 import React from "react";
-import { Grid, Container, Typography } from "@material-ui/core";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import IconButton from "@mui/material/IconButton";
 
-import CardItem from "../card";
+import DialogButton from "../dialogButton";
 
-export default function List(props) {
+function srcset(image, size, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+  };
+}
+
+export default function TitlebarImageList(props) {
   const { list } = props;
-
   return (
-    <div>
-      <Container sx={{ mt: 6 }} maxWidth='md'>
-        <Typography
-          align='center'
-          gutteBottom
-          variant='h2'
-          component='h2'
-          id={list.titleMain}
+    <ImageList
+      sx={{ width: "100%", height: "100vh" }}
+      variant='quilted'
+      cols={4}
+      rowHeight={121}
+    >
+      {list.cards.map((item) => (
+        <ImageListItem
+          key={item.image}
+          cols={item.cols || 1}
+          rows={item.rows || 1}
         >
-          {list.titleMain}
-        </Typography>
-
-        <Grid container spacing={4}>
-          {list.cards.map((card, index) => (
-            <Grid item key={index} xs={6} sm={6} md={4}>
-              <CardItem
-                title={card.title}
-                subTitle={card.subTitle}
-                image={card.image}
-                path={card.path}
-                description={card.description}
-                pathRepo={card.pathRepo}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </div>
+          <img
+            {...srcset(item.image, 121, item.rows, item.cols)}
+            alt={item.title}
+            loading='lazy'
+          />
+          <ImageListItemBar
+            title={item.title}
+            subtitle={item.subTitle}
+            actionIcon={
+              <IconButton
+                sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                aria-label={`info about ${item.title}`}
+              >
+                <DialogButton item={item} />
+              </IconButton>
+            }
+          />
+        </ImageListItem>
+      ))}
+    </ImageList>
   );
 }
