@@ -1,4 +1,5 @@
 import React from "react";
+import Img from "../../img/florian-olivo-4hbJ-eymZ1o-unsplash.jpg";
 
 import {
   Box,
@@ -10,17 +11,13 @@ import {
 } from "@material-ui/core";
 import Link from "@mui/material/Link";
 
+import "./style.css";
+
 export default function Header() {
   return (
-    <div>
-      <Box
-        sx={{
-          bgcolor: "#2A2A2A",
-          pt: 25,
-          pb: 28,
-          zIndex: "100",
-        }}
-      >
+    <Box className='containerHeader'>
+      <img src={Img} alt='img' className='imgHeader' />
+      <Box className='boxHeader'>
         <Container maxWidth='sm' sx={{ display: "flex", maxWidth: "100%" }}>
           <Box>
             <Typography
@@ -29,6 +26,7 @@ export default function Header() {
               align='start'
               color='#A2A'
               gutterBottom
+              sx={{ fontWeight: "800" }}
             >
               Web developer portfolio.
             </Typography>
@@ -50,70 +48,40 @@ export default function Header() {
               spacing={2}
               justifyContent='center'
             >
-              <Grid container spacing={2}>
-                <Grid item xs={4} sm={6} md={4}>
-                  <Link>
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
-                    >
-                      Projetos
-                    </Button>
-                  </Link>
-                </Grid>
-                <Grid item xs={3} sm={6} md={4}>
-                  <Link>
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "5rem" }}
-                    >
-                      Skills
-                    </Button>
-                  </Link>
-                </Grid>
-                <Grid item xs={4} sm={6} md={4}>
-                  <Link>
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
-                    >
-                      Contatos
-                    </Button>
-                  </Link>
-                </Grid>
-                <Grid item xs={3} sm={6} md={4}>
+              <Grid container align='center' spacing={2}>
+                <Grid item xs={4} sm={4} md={4}>
                   <Link href='https://github.com/nfescame' target='_blank'>
                     <Button
                       variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "5rem" }}
+                      sx={{ backgroundColor: "#2A2A2A", width: "6rem" }}
                     >
                       GitHub
                     </Button>
                   </Link>
                 </Grid>
 
-                <Grid item xs={4} sm={6} md={4}>
+                <Grid item xs={4} sm={4} md={4}>
                   <Link
                     href='https://www.linkedin.com/in/nilton-escame/'
                     target='_blank'
                   >
                     <Button
                       variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
+                      sx={{ backgroundColor: "#2A2A2A", width: "6rem" }}
                     >
                       LinkedIn
                     </Button>
                   </Link>
                 </Grid>
 
-                <Grid item xs={5} sm={6} md={4}>
+                <Grid item xs={4} sm={4} md={4}>
                   <Link
                     href='https://profiles.ironhack.com/nilton-escame'
                     target='_blank'
                   >
                     <Button
                       variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "7rem" }}
+                      sx={{ backgroundColor: "#2A2A2A", width: "6rem" }}
                     >
                       Certificado
                     </Button>
@@ -124,6 +92,6 @@ export default function Header() {
           </Box>
         </Container>
       </Box>
-    </div>
+    </Box>
   );
 }
