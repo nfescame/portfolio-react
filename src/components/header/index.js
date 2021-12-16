@@ -16,7 +16,17 @@ import "./style.css";
 export default function Header() {
   return (
     <Box className='containerHeader'>
+      <Typography
+        className='titleHeader'
+        component='h1'
+        variant='h3'
+        align='start'
+        color='white'
+      >
+        Nilton Escame
+      </Typography>
       <img src={Img} alt='img' className='imgHeader' />
+
       <Box className='boxHeader'>
         <Container maxWidth='sm' sx={{ display: "flex", maxWidth: "100%" }}>
           <Box>
