@@ -1,16 +1,16 @@
 .containerHeader {
   display: flex;
 }
-.titleHeader {
-  font-weight: 800;
-  position: absolute;
-  top: 100px;
-  left: 100px;
-}
+
 .imgHeader {
   border-radius: 50px;
   width: 50%;
+  height: 80vh;
   padding: 2rem;
+  transition: all 1s;
+}
+.imgHeader:hover {
+  opacity: 0.8;
 }
 
 .boxHeader {
@@ -24,12 +24,6 @@
 @media screen and (max-width: 600px) {
   .containerHeader {
     display: block;
-  }
-  .titleHeader {
-    font-weight: 800;
-    position: absolute;
-    top: 10px;
-    left: 25%;
   }
   .imgHeader {
     width: 100%;

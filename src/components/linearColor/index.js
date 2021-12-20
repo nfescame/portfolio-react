@@ -16,8 +16,6 @@ export default function LinearColor() {
       spacing={6}
     >
       <LinearProgress color='secondary' />
-      <LinearProgress color='success' />
-      <LinearProgress color='inherit' />
     </Stack>
   );
 }

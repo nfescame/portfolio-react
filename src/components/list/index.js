@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 
 import DialogButton from "../dialogButton";
 import { Box, Typography } from "@material-ui/core";
+import "./style.css";
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -37,6 +38,7 @@ export default function List(props) {
       >
         {list.cards.map((item) => (
           <ImageListItem
+            className='cardList'
             key={item.image}
             cols={item.cols || 1}
             rows={item.rows || 1}
@@ -54,7 +56,7 @@ export default function List(props) {
                   sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                   aria-label={`info about ${item.title}`}
                 >
-                  <DialogButton item={item} />
+                  <DialogButton item={item} titleMain={list.titleMain} />
                 </IconButton>
               }
             />

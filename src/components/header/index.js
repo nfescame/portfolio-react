@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../../img/florian-olivo-4hbJ-eymZ1o-unsplash.jpg";
+import Img from "../../img/fernando-hernandez-JdoofvUDUwc-unsplash.jpg";
 
 import {
   Box,
@@ -16,15 +16,6 @@ import "./style.css";
 export default function Header() {
   return (
     <Box className='containerHeader'>
-      <Typography
-        className='titleHeader'
-        component='h1'
-        variant='h3'
-        align='start'
-        color='white'
-      >
-        Nilton Escame
-      </Typography>
       <img src={Img} alt='img' className='imgHeader' />
 
       <Box className='boxHeader'>
@@ -33,7 +24,7 @@ export default function Header() {
             <Typography
               component='h1'
               variant='h3'
-              align='start'
+              align='left'
               color='#A2A'
               gutterBottom
               sx={{ fontWeight: "800" }}
@@ -43,7 +34,7 @@ export default function Header() {
             <Typography
               component='h6'
               variant='h6'
-              align='start'
+              align='left'
               color='#CACACA'
               gutterBottom
             >
@@ -60,11 +51,12 @@ export default function Header() {
             >
               <Grid container align='center' spacing={2}>
                 <Grid item xs={4} sm={4} md={4}>
-                  <Link href='https://github.com/nfescame' target='_blank'>
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "6rem" }}
-                    >
+                  <Link
+                    href='https://github.com/nfescame'
+                    target='_blank'
+                    sx={{ textDecoration: "none" }}
+                  >
+                    <Button variant='contained' color='secondary'>
                       GitHub
                     </Button>
                   </Link>
@@ -74,11 +66,9 @@ export default function Header() {
                   <Link
                     href='https://www.linkedin.com/in/nilton-escame/'
                     target='_blank'
+                    sx={{ textDecoration: "none" }}
                   >
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "6rem" }}
-                    >
+                    <Button variant='contained' color='secondary'>
                       LinkedIn
                     </Button>
                   </Link>
@@ -88,11 +78,9 @@ export default function Header() {
                   <Link
                     href='https://profiles.ironhack.com/nilton-escame'
                     target='_blank'
+                    sx={{ textDecoration: "none" }}
                   >
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: "#2A2A2A", width: "6rem" }}
-                    >
+                    <Button variant='contained' color='secondary'>
                       Certificado
                     </Button>
                   </Link>
