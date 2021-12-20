@@ -22,7 +22,8 @@ export const Auth = (props) => {
         cols: 2,
         title: "Lig4 Game",
         subTitle: "Project # Game",
-        image: "http://www.tabuleirocriativo.com.br/Images1/lig4-topimage.jpg",
+        image:
+          "https://github.com/nfescame/Lig4-Game/blob/master/img/lig4Logo.png?raw=true",
         path: "https://nfescame.github.io/Lig4-Game/",
         pathRepo: "https://github.com/nfescame/Lig4-Game",
         description:
@@ -35,7 +36,7 @@ export const Auth = (props) => {
         title: "So fit ",
         subTitle:
           "Project # API-Pair programming-Manoel Pereira e Raul Guimarães",
-        image: " https://portfolionfescame.netlify.app/imagens/fitness.jpeg",
+        image: "https://portfolionfescame.netlify.app/imagens/fitness.jpeg",
         path: "https://so-fit-app.netlify.app/",
         pathRepo: "https://github.com/rguima17/so-fit-client",
         description:
